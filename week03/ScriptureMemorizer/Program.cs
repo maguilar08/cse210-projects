@@ -4,11 +4,16 @@ class Program
 {
     static void Main(string[] args)
     {
-        //Console.WriteLine("Hello World! This is the ScriptureMemorizer Project.");
-        
+        //For the core requirements I added a scripture library which is the class ScripturesLibrary()
 
-        Reference reference = new Reference("Proverbs", 3, 5, 6);
-        Scripture scripture = new Scripture(reference, "Trust in the Lord with all thine heart and lean not unto thine own understanding; in all thy ways acknowledge him,and he shall direct thy paths.");
+        //Console.WriteLine("Hello World! This is the ScriptureMemorizer Project.");
+
+
+        // Reference reference = new Reference("Proverbs", 3, 5, 6);
+        // Scripture scripture = new Scripture(reference, "Trust in the Lord with all thine heart and lean not unto thine own understanding; in all thy ways acknowledge him,and he shall direct thy paths.");
+
+        ScripturesLibrary library = new ScripturesLibrary();
+        Scripture scripture = library.getRandom();
 
         while (true)
         {
@@ -23,7 +28,7 @@ class Program
             if (scripture.IsCompletelyHidden())
                 break;
 
-            scripture.HideRandomWords(3); 
+            scripture.HideRandomWords(3);
         }
 
         Console.Clear();
