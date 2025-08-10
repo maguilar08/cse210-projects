@@ -20,7 +20,7 @@ public class Address
         string fixingWriting = _country.Trim();  //return _country.Trim().ToUpper() == "USA"; => This would be the short way...
         fixingWriting = fixingWriting.ToLower();
 
-        if (fixingWriting == "USA")
+        if (fixingWriting == "usa")
         {
             return true;
         }
@@ -30,10 +30,16 @@ public class Address
         }
     }
 
-    public void FullAddress()
+    // it doesn´t work
+    // public void FullAddress()
+    // {
+    //     Console.WriteLine(_street);
+    //     Console.WriteLine($"{_city}, {_state}");
+    //     Console.WriteLine(_country);
+    // }
+
+    public string FullAddress()
     {
-        Console.WriteLine(_street);
-        Console.WriteLine($"{_city}, {_state}");
-        Console.WriteLine(_country);
+        return $"{_street}\n{_city}, {_state}\n{_country}"; 
     }
 }
